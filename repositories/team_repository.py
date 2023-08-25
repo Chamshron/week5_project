@@ -16,3 +16,22 @@ def select_all_teams():
         team = Team(row['name'], row['country'], row['score'], row['id'])
         teams.append(team)
     return teams 
+
+def select_one_team(id):
+    team = None
+    sql = "SELECT * FROM teams WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)[0]
+
+    if result is not None:
+        team = Team(result['name'], result['country'], result['score'], result['id'])
+    return team
+
+def delete_all():
+    sql = "DELETE FROM teams"
+    run_sql(sql)
+
+def delete_one(id):
+    sql = "DELETE FROM teams WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)

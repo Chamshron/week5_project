@@ -1,0 +1,29 @@
+from db.run_sql import run_sql
+from models.player import Player
+
+def save_player(player):
+    sql = "INSERT INTO players(name) VALUES (%s) RETURNING id"
+    values = [player.name]
+    results = run_sql(sql, values)
+    player.id = results[0]['id']
+    return player
+
+def select_all_players():
+    players = []
+    sql = "SELECT * FROM players"
+    results = run_sql(sql)
+    for row in results:
+        player = Player(row['name'], row['grade'], row['team'], row['id'])
+        players.append(player)
+    return players
+
+def players_for_team(team):
+    sql = "SELECT * FROM players WHERE id = %s"
+    values = [team.player.id]
+    results = run_sql(sql,values)[0]
+    player = Player(results['name'], results['grade'], results['team'], results['id'])
+    return player
+
+def delete_all():
+    sql = "DELETE FROM players"
+    run_sql(sql)
