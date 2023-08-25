@@ -17,13 +17,6 @@ def select_all_players():
         players.append(player)
     return players
 
-def players_for_team(team):
-    sql = "SELECT * FROM players WHERE id = %s"
-    values = [team.player.id]
-    results = run_sql(sql,values)[0]
-    player = Player(results['name'], results['grade'], results['team'], results['id'])
-    return player
-
 def delete_all():
     sql = "DELETE FROM players"
     run_sql(sql)

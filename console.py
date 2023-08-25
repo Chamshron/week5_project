@@ -21,12 +21,12 @@ team_repository.save(team3)
 # results2 = team_repository.select_all_teams
 
 #Player Repository Tests
-player1 = Player("Kanako Hirai", 2, "Team GB")
-player_repository.save_player(player1)
-player2 = Player("Ginjing Ching", 4, "Team GB")
-player_repository.save_player(player2)
-player3 = Player("Emily Flora Knight", 5,"Team GB")
-player_repository.save_player(player3)
-player_repository.select_all_players()
+# player1 = Player("Kanako Hirai", 2, "Team GB")
+# player_repository.save_player(player1)
+# player2 = Player("Ginjing Ching", 4, "Team GB")
+# player_repository.save_player(player2)
+# player3 = Player("Emily Flora Knight", 5,"Team GB")
+# player_repository.save_player(player3)
+# player_results = player_repository.select_all_players()
 
 pdb.set_trace()
