@@ -30,3 +30,8 @@ def select_one_player(id):
 def delete_all():
     sql = "DELETE FROM players"
     run_sql(sql)
+
+def delete_one(id):
+    sql = "DELETE FROM players WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)

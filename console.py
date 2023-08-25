@@ -1,6 +1,7 @@
 import pdb
 from models.team import Team
 from models.player import Player
+
 import repositories.team_repository as team_repository
 import repositories.player_repository as player_repository
 
@@ -18,7 +19,7 @@ team_repository.save(team3)
 # results0 = team_repository.select_all_teams()
 # results1 = team_repository.select_one_team(1)
 # team_repository.delete_one(1)
-# results2 = team_repository.select_all_teams
+# results2 = team_repository.select_all_teams()
 
 #Player Repository Tests
 player1 = Player("Kanako Hirai", 2, "Team GB")
@@ -30,7 +31,8 @@ player_repository.save_player(player3)
 
 #Player Repository Tests
 # player_results0 = player_repository.select_all_players()
-player_results1 = player_repository.select_one_player(1)
-
+# player_results1 = player_repository.select_one_player(1)
+# player_repository.delete_one(2)
+# player_results2 = player_repository.select_all_players()
 
 pdb.set_trace()
