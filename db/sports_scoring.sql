@@ -15,3 +15,10 @@ CREATE TABLE players(
     grade INT,
     team INT REFERENCES teams(id) ON DELETE CASCADE 
 );
+
+CREATE TABLE matches(
+    id SERIAL PRIMARY KEY,
+    team_a INT REFERENCES teams(id) ON DELETE CASCADE,
+    team_b INT REFERENCES teams(id) ON DELETE CASCADE,
+    match_date VARCHAR(255)
+);
