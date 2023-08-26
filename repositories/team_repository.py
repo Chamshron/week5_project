@@ -36,5 +36,3 @@ def delete_one(id):
     sql = "DELETE FROM teams WHERE id = %s"
     values = [id]
     run_sql(sql, values)
-
-def update_score():
