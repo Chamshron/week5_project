@@ -13,7 +13,7 @@ def select_all_teams():
     sql = "SELECT * FROM teams"
     results = run_sql(sql)
     for row in results:
-        team = Team(row['name'], row['country'], row['score'], row['id'])
+        team = Team(row['name'], row['country'], row['score'], row['players'], row['id'])
         teams.append(team)
     return teams 
 
@@ -24,8 +24,10 @@ def select_one_team(id):
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        team = Team(result['name'], result['country'], result['score'], result['id'])
+        team = Team(result['name'], result['country'], result['score'], result['players'], result['id'])
     return team
+
+
 
 def delete_all():
     sql = "DELETE FROM teams"
