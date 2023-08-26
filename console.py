@@ -12,11 +12,11 @@ player_repository.delete_all
 match_repository.delete_all
 
 #Team Repository Tests
-team1 = Team("Team GB", "United Kingdom", 0)
+team1 = Team("Team GB", "United Kingdom", 0, [])
 team_repository.save(team1)
-team2 = Team("Team France", "France",0)
+team2 = Team("Team France", "France",0, [])
 team_repository.save(team2)
-team3 = Team("Team Poland", "Poland", 0)
+team3 = Team("Team Poland", "Poland", 0, [])
 team_repository.save(team3)
 
 #Team Repository Tests
@@ -33,19 +33,19 @@ player_repository.save_player(player2)
 player3 = Player("Emily Flora Knight", 5,"Team GB")
 player_repository.save_player(player3)
 
-player4 = Player("Saya Guadarrama", 3,"Team France")
-player_repository.save_player(player4)
-player5 = Player("Minh Ha Nguyen", 4,"Team France")
-player_repository.save_player(player5)
-player6 = Player("Coralie Texier", 5,"Team France")
-player_repository.save_player(player6)
+# player4 = Player("Saya Guadarrama", 3,"Team France")
+# player_repository.save_player(player4)
+# player5 = Player("Minh Ha Nguyen", 4,"Team France")
+# player_repository.save_player(player5)
+# player6 = Player("Coralie Texier", 5,"Team France")
+# player_repository.save_player(player6)
 
-player7 = Player("Maria Anna Bober", 5,"Team Poland")
-player_repository.save_player(player7)
-player8 = Player("Joanna Labak", 5,"Team Poland")
-player_repository.save_player(player8)
-player9 = Player("Natalia Maj", 5,"Team Poland")
-player_repository.save_player(player9)
+# player7 = Player("Maria Anna Bober", 5,"Team Poland")
+# player_repository.save_player(player7)
+# player8 = Player("Joanna Labak", 5,"Team Poland")
+# player_repository.save_player(player8)
+# player9 = Player("Natalia Maj", 5,"Team Poland")
+# player_repository.save_player(player9)
 
 #Player Repository Tests
 # player_results0 = player_repository.select_all_players()
@@ -62,9 +62,10 @@ match3 = Match("Team Poland", "Team France", "Monday 27th August")
 match_repository.save_match(match3)
 
 #Match Repository Tests
-# match01 = match_repository.select_all_matches()
-# match02 = match_repository.select_one_match(1)
-# match_repository.delete_one(0)
-# match03 = match_repository.select_all_matches()
+match01 = match_repository.select_all_matches()
+match02 = match_repository.select_one_match(1)
+match_repository.delete_one(0)
+match03 = match_repository.select_all_matches()
 
+result04 = team_repository.add_player(1,1)
 pdb.set_trace()

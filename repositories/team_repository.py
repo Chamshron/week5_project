@@ -1,5 +1,6 @@
 from db.run_sql import run_sql
 from models.team import Team
+from models.player import Player
 
 def save(team):
     sql = "INSERT INTO teams(name) VALUES (%s) RETURNING id"
@@ -22,12 +23,9 @@ def select_one_team(id):
     sql = "SELECT * FROM teams WHERE id = %s"
     values = [id]
     result = run_sql(sql, values)[0]
-
     if result is not None:
         team = Team(result['name'], result['country'], result['score'], result['players'], result['id'])
     return team
-
-
 
 def delete_all():
     sql = "DELETE FROM teams"
