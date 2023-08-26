@@ -1,3 +1,4 @@
+DROP TABLE match_score;
 DROP TABLE matches;
 DROP TABLE players;
 DROP TABLE teams;
@@ -21,4 +22,11 @@ CREATE TABLE matches(
     team_a INT REFERENCES teams(id) ON DELETE CASCADE,
     team_b INT REFERENCES teams(id) ON DELETE CASCADE,
     match_date VARCHAR(255)
+);
+
+CREATE TABLE match_score(
+    id SERIAL PRIMARY KEY,
+    team_id INT REFERENCES teams(id) ON DELETE CASCADE,
+    match_id INT REFERENCES matches(id) ON DELETE CASCADE,
+    result VARCHAR(255)
 );
