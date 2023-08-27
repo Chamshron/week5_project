@@ -41,3 +41,16 @@ def update(team):
     sql = "UPDATE teams SET (name, country, score, players, id) = (%s, %s, %s, %s, %s) WHERE id = %s"
     values = [team.name, team.country, team.score, team.players, team.id]
     run_sql(sql,values)
+
+def matches_for_team(team):
+    matches = []
+
+    sql = "SELECT * FROM matches WHERE user_id = %s"
+    values = [team.id]
+    results = run_sql(sql, values)
+
+    for row in results:
+        match = Match(row['team_a'], row['team_b'], row['match_date'], row['id'])
+        matches.append(match)
+    return matches
+
