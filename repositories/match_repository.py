@@ -35,3 +35,8 @@ def delete_one(id):
     sql = "DELETE FROM matches WHERE id = %s"
     values = [id]
     run_sql(sql, values)
+
+def update(match):
+    sql = "UPDATE matches SET (team_a, team_b, match_date, id) = (%s, %s, %s, %s) WHERE id = %s"
+    values = [match.team_a, match.team_b, match.match_date, match.id]
+    run_sql(sql, values)

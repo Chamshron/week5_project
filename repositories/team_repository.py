@@ -36,3 +36,8 @@ def delete_one(id):
     sql = "DELETE FROM teams WHERE id = %s"
     values = [id]
     run_sql(sql, values)
+
+def update(team):
+    sql = "UPDATE teams SET (name, country, score, players, id) = (%s, %s, %s, %s, %s) WHERE id = %s"
+    values = [team.name, team.country, team.score, team.players, team.id]
+    run_sql(sql,values)
