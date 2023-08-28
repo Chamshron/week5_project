@@ -70,7 +70,5 @@ match_repository.save_match(match3)
 
 #testing teams for match
 # result05 = team_repository.teams_for_match(match1)
-
-
-
+result06 = match_repository.matches_for_team(team1)
 pdb.set_trace()

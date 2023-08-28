@@ -44,3 +44,13 @@ def update(match):
     values = [match.team_a, match.team_b, match.match_date, match.id]
     run_sql(sql, values)
 
+def matches_for_team(team):
+    matches = []
+    # pdb.set_trace()
+    sql = "SELECT * FROM matches WHERE team_a = %s OR team_b = %s"
+    values = [team.id,team.id]
+    results = run_sql(sql, values)
+    for row in results:
+        match = select_one_match(row['id'])
+        matches.append(match)
+    return matches

@@ -46,7 +46,7 @@ def update(team):
 def teams_for_match(match):
     # pdb.set_trace()
     teams = []
-    sql = "SELECT * from matches WHERE id = %s"
+    sql = "SELECT * FROM matches WHERE id = %s"
     values = [match.id]
     results = run_sql(sql, values)
     # pdb.set_trace()
