@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1> {{team.name}} </h1>
+
+<p>Country: {{ team.country }}</p>
+
+<h3>Matches played:</h3>
+
+<ul>
+    {% for match in matches  %}
+    <li>{{match.date}}</li>
+    <li>{{match.team_a}}</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Teams in the European Kendo League</h1>
+
+<table>
+  <tr>
+    <th>Countries in the League: </th>
+    <th></th>
+    <th></th>
+  </tr>
+  {% for team in teams %}
+  <tr>
+    <td><a href="/teams/{{ team.id }}"> {{team.name}} </a></td>
+    <td>|</td>
+    <td>{{ team.country }}</td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

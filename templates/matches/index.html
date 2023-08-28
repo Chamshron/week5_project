@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Matches from the European Kendo League</h1>
+
+<table>
+  <tr>
+    <th>Dates that had matches: </th>
+    <th></th>
+    <th></th>
+  </tr>
+  {% for match in matches %}
+  <tr>
+    <td><a href="/matches/{{ match.id }}"> {{match.match_date}} </a></td>
+    <td>|</td>
+    <td>Teams competiting: {{ match.team_a }} and {{ match.team_b }}</td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}
