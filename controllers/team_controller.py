@@ -11,6 +11,11 @@ def teams():
     teams = team_repository.select_all_teams()
     return render_template ("teams/index.html", teams=teams)
 
+@teams_blueprint.route("/teams/<id>")
+def show(id):
+    team = team_repository.select_one_team(id)
+    return render_template("teams/show.html", team = team)
+
 @teams_blueprint.route("/teams/new", methods=['GET'])
 def new_task():
     teams = team_repository.select_all_teams()
