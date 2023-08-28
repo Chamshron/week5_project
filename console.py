@@ -7,9 +7,9 @@ import repositories.team_repository as team_repository
 import repositories.player_repository as player_repository
 import repositories.match_repository as match_repository
 
-team_repository.delete_all
-player_repository.delete_all
-match_repository.delete_all
+team_repository.delete_all()
+player_repository.delete_all()
+match_repository.delete_all()
 
 #Team Repository Tests
 team1 = Team("Team GB", "United Kingdom", 0, [])
@@ -54,18 +54,23 @@ player_repository.save_player(player3)
 # player_results2 = player_repository.select_all_players()
 
 #Match Repository Tests
-match1 = Match("Team GB", "Team France", "Saturday 25th August")
+match1 = Match(team1, team2, "Saturday 25th August")
 match_repository.save_match(match1)
-match2 = Match("Team GB", "Team Poland", "Sunday 26th August")
+# pdb.set_trace()
+match2 = Match(team1, team3, "Sunday 26th August")
 match_repository.save_match(match2)
-match3 = Match("Team Poland", "Team France", "Monday 27th August")
+match3 = Match(team3, team2, "Monday 27th August")
 match_repository.save_match(match3)
 
-#Match Repository Tests
-match01 = match_repository.select_all_matches()
-match02 = match_repository.select_one_match(1)
-match_repository.delete_one(0)
-match03 = match_repository.select_all_matches()
+# #Match Repository Tests
+# match01 = match_repository.select_all_matches()
+# match02 = match_repository.select_one_match(1)
+# match_repository.delete_one(0)
+# match03 = match_repository.select_all_matches()
 
-result04 = team_repository.add_player(1,1)
+#testing teams for match
+# result05 = team_repository.teams_for_match(match1)
+
+
+
 pdb.set_trace()

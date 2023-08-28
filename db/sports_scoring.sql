@@ -19,8 +19,8 @@ CREATE TABLE players(
 
 CREATE TABLE matches(
     id SERIAL PRIMARY KEY,
-    team_a INT REFERENCES teams(id) ON DELETE CASCADE,
-    team_b INT REFERENCES teams(id) ON DELETE CASCADE,
+    team_a INT REFERENCES teams(id),
+    team_b INT REFERENCES teams(id),
     match_date VARCHAR(255)
 );
 

@@ -2,6 +2,7 @@ from db.run_sql import run_sql
 from models.team import Team
 from models.player import Player
 from models.match import Match
+import pdb
 
 def save(team):
     sql = "INSERT INTO teams(name) VALUES (%s) RETURNING id"
@@ -25,7 +26,7 @@ def select_one_team(id):
     values = [id]
     result = run_sql(sql, values)[0]
     if result is not None:
-        team = Team(result['name'], result['country'], result['score'], result['players'], result['id'])
+        team = Team(result['name'], result['country'], result['score'], result['id'])
     return team
 
 def delete_all():
@@ -42,15 +43,19 @@ def update(team):
     values = [team.name, team.country, team.score, team.players, team.id]
     run_sql(sql,values)
 
-def matches_for_team(team):
-    matches = []
-
-    sql = "SELECT * FROM matches WHERE user_id = %s"
-    values = [team.id]
+def teams_for_match(match):
+    # pdb.set_trace()
+    teams = []
+    sql = "SELECT * from matches WHERE id = %s"
+    values = [match.id]
     results = run_sql(sql, values)
+    # pdb.set_trace()
 
-    for row in results:
-        match = Match(row['team_a'], row['team_b'], row['match_date'], row['id'])
-        matches.append(match)
-    return matches
+    team_a = select_one_team(results[0]['team_a'])
+    teams.append(team_a)
+    team_b = select_one_team(results[0]['team_b'])
+    teams.append(team_b)
+
+    return teams
+    
 

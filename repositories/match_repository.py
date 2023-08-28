@@ -1,10 +1,13 @@
 from db.run_sql import run_sql
 from models.match import Match
+from models.team import Team
+import pdb
 
 def save_match(match):
-    sql = "INSERT INTO matches(match_date) VALUES (%s) RETURNING id"
-    values = [match.match_date]
+    sql = "INSERT INTO matches(team_a, team_b, match_date) VALUES (%s, %s, %s) RETURNING *"
+    values = [match.team_a.id, match.team_b.id, match.match_date]
     results = run_sql(sql, values)
+    # pdb.set_trace()
     match.id = results[0]['id']
     return match
 
@@ -40,3 +43,4 @@ def update(match):
     sql = "UPDATE matches SET (team_a, team_b, match_date, id) = (%s, %s, %s, %s) WHERE id = %s"
     values = [match.team_a, match.team_b, match.match_date, match.id]
     run_sql(sql, values)
+
