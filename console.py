@@ -7,9 +7,9 @@ import repositories.team_repository as team_repository
 import repositories.player_repository as player_repository
 import repositories.match_repository as match_repository
 
-team_repository.delete_all()
-player_repository.delete_all()
 match_repository.delete_all()
+player_repository.delete_all()
+team_repository.delete_all()
 
 #Team Repository Tests
 team1 = Team("Team GB", "United Kingdom", 0, [])
@@ -26,11 +26,11 @@ team_repository.save(team3)
 # results2 = team_repository.select_all_teams()
 
 #Player Repository Tests
-player1 = Player("Kanako Hirai", 2, "Team GB")
+player1 = Player("Kanako Hirai", 2, team1.id)
 player_repository.save_player(player1)
-player2 = Player("Ginjing Ching", 4, "Team GB")
+player2 = Player("Ginjing Ching", 4, team1.id)
 player_repository.save_player(player2)
-player3 = Player("Emily Flora Knight", 5,"Team GB")
+player3 = Player("Emily Flora Knight", 5,team1.id)
 player_repository.save_player(player3)
 
 # player4 = Player("Saya Guadarrama", 3,"Team France")
@@ -54,12 +54,12 @@ player_repository.save_player(player3)
 # player_results2 = player_repository.select_all_players()
 
 #Match Repository Tests
-match1 = Match(team1, team2, "Saturday 25th August")
+match1 = Match(team1, team2, 1, 0, "Saturday 25th August")
 match_repository.save_match(match1)
 # pdb.set_trace()
-match2 = Match(team1, team3, "Sunday 26th August")
+match2 = Match(team1, team3, 2, 2, "Sunday 26th August")
 match_repository.save_match(match2)
-match3 = Match(team3, team2, "Monday 27th August")
+match3 = Match(team3, team2, 2, 3, "Monday 27th August")
 match_repository.save_match(match3)
 
 # #Match Repository Tests
@@ -68,7 +68,7 @@ match_repository.save_match(match3)
 # match_repository.delete_one(0)
 # match03 = match_repository.select_all_matches()
 
-#testing teams for match
+#testing teams for match/match for teams
 # result05 = team_repository.teams_for_match(match1)
-result06 = match_repository.matches_for_team(team1)
+# result06 = match_repository.matches_for_team(team1)
 pdb.set_trace()
