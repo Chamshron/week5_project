@@ -5,6 +5,7 @@ ul {
     overflow: hidden;
     background-color: #6096ba;
   }
+
   li {
     float: left;
   }
@@ -33,8 +34,14 @@ div {
   h1, h2, h3{
     font-family: 'Times New Roman', Times, serif;
     text-align: center;
+    margin-top: 10px;
   }
 
+  p{
+    margin: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+  }
   table, th, td {
     border: 1px solid;
     background-color: #274c77;
@@ -56,3 +63,13 @@ div {
     text-align: center;
     color: white;
   }
+
+image {
+  width: 1800px;
+  height: 300px;
+  margin-bottom: 10px;
+}
+
+img {
+  float:left;
+}
