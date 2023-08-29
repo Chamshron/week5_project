@@ -5,8 +5,8 @@ from models.match import Match
 import pdb
 
 def save(team):
-    sql = "INSERT INTO teams(name) VALUES (%s) RETURNING id"
-    values = [team.name]
+    sql = "INSERT INTO teams(name, country, score) VALUES (%s, %s, %s) RETURNING id"
+    values = [team.name, team.country, team.score]
     results = run_sql(sql, values)
     team.id = results[0]['id']
     return team
@@ -26,7 +26,7 @@ def select_one_team(id):
     values = [id]
     result = run_sql(sql, values)[0]
     if result is not None:
-        team = Team(result['name'], result['country'], result['score'],result['players'], result['id'])
+        team = Team(result['name'], result['country'], result['score'], result['id'])
     return team
 
 def delete_all():
@@ -40,7 +40,7 @@ def delete_one(id):
 
 def update(team):
     sql = "UPDATE teams SET (name, country, score, players, id) = (%s, %s, %s, %s, %s) WHERE id = %s"
-    values = [team.name, team.country, team.score, team.players, team.id]
+    values = [team.name, team.country, team.score, team.id]
     run_sql(sql,values)
 
 def teams_for_match(match):

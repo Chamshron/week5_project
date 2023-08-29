@@ -3,6 +3,10 @@
 {% block content %}
 <h1>Matches from the European Kendo League</h1>
 
+<p class="btn--wrapper">
+  <a class="btn btn--action" href="/matches/new">New Match</a>
+</p>
+
 <table>
   <tr>
     <th>Dates that had matches: </th>
@@ -15,6 +19,10 @@
     <td>|</td>
     <td>Teams competiting: {{ match.team_a }} and {{ match.team_b }}</td>
   </tr>
+  <div class="buttons">
+    <form class="delete-form" action="/matches/{{match.id}}/delete" method="POST">
+      <button class="trash-button"><i class="fa fa-trash-o fa-3x" style="color:red" aria-hidden="true"></i></button>
+    </form>
   {% endfor %}
 </table>
 {% endblock %}
