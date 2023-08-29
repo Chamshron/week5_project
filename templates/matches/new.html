@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Add a Match</h1>
+
+<form action="/matches" method="post">
+    <div>
+    <label for="team_a">Select a Team: </label>
+    <select name="team_a" id="team_name">
+        {%for team in teams%}
+        <option value="{{team.id}}">{{team.name}}</option>
+        {% endfor %}
+    </select>
+
+    <label for="team_b">Select another Team: </label>
+    <select name="team_b" id="team_name">
+        {%for team in teams%}
+        <option value="{{team.id}}">{{team.name}}</option>
+        {% endfor %}
+    </select>
+
+    <div>
+    <label for="team_a_score">Score of the First Team: </label>
+    <input type="number" id="team_a_score" name="team_a_score" placeholder ="Score" required autofocus>
+    </div>
+
+    <div>
+     <label for="team_b_score">Score of the Other Team: </label>
+    <input type="number" id="team_b_score" name="team_b_score" placeholder ="Score" required autofocus>
+    </div>
+
+    <div>
+    <label for="match_date">When was the match? </label>
+    <input type="text" id="match_date" name="match_date" placeholder ="Match Date" required autofocus>
+    </div>
+
+  <input class="btn btn--action" type='submit' value="Add Match">
+</form>
+
+{% endblock %}

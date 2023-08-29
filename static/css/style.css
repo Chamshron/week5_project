@@ -1,0 +1,36 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: f4e9cd;
+  }
+  li {
+    float: left;
+  }
+
+  li a {
+    display: block;
+    color: f4e9cd;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    background-color: f4e9cd;
+  }
+
+body {
+    background-color:#9DBEBB;
+    color: #031926;
+}
+
+div {
+    width: 300px;
+    border: 15px #9DBEBB;
+    padding: 50px;
+    margin: 20px;
+    background-color: #f4e9cd;
+  }
+
+  h1{
+    font-family: 'Times New Roman', Times, serif;
+  }
