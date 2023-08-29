@@ -1,13 +1,20 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1> Team Name: {{team.name}} </h1>
+<h1> {{team.name}} </h1>
 
-<p>Country: {{ team.country }}</p>
-<p>Matches: {% for match in matches %}
-    <li>{{match.match_date}}</li>
-    {% endfor %}
-</p>
-<div><p><a href="/teams/{{team.id}}/edit">Edit</a></p></div>
-
+{% for match in matches %}
+<table style="width:100%">
+    <tr>
+        <th style="width:30%">Country</th>
+        <th style="width:30%">Matches</th>
+        <th style="width:30%">Need to Edit?</th>
+    </tr>
+    <tr>
+        <th>{{ team.country }}</th>
+        <th>{{match.match_date}} <br> {{match.team_a.name}} vs. {{match.team_b.name}}</th>
+        <th><div><p><a href="/teams/{{team.id}}/edit">Edit</a></p></div></th>
+    </tr>
+</table>
+{% endfor %}
 {% endblock %}

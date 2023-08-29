@@ -3,12 +3,24 @@
 {% block content %}
 <h1> {{match.match_date}} </h1>
 
-<p>
-    Teams: {{match.team_a.name}} with {{match.team_a_score}} points and {{match.team_b.name}} with {{match.team_b_score}} points.
-</p>
+<table style="width:100%">
+    <tr>
+        <th style="width:30%">White Team</th>
+        <th style="width:20%">White Team Score</th>
+        <th style="width:20%">Red Team Score</th>
+        <th style="width:30%">Red Team</th>
+    </tr>
+    <tr>
+        <th>{{match.team_a.name}} </th>
+        <th>{{match.team_a_score}} </th>
+        <th>{{match.team_b_score}} </th>
+        <th>{{match.team_b.name}} </th>
+    </tr>
+</table>
+
 {% if winning_team.name != Draw: %}
-<p> Winner: {{winning_team.name}}</p>
+<h2> Winner: {{winning_team.name}}</h2>
 {% else: %}
-<p>{{match.team_a.name}} and {{match.team_b.name}} tied.</p>
+<h3>{{match.team_a.name}} and {{match.team_b.name}} tied.</h3>
 {% endif %}
 {% endblock %}
