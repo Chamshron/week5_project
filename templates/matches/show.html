@@ -4,9 +4,11 @@
 <h1> {{match.match_date}} </h1>
 
 <p>
-    Teams: {{match.team_a.name}} with {{match.match_a_score}} points and {{match.team_b.name}} with {{match.match_b_score}} points.
+    Teams: {{match.team_a.name}} with {{match.team_a_score}} points and {{match.team_b.name}} with {{match.team_b_score}} points.
 </p>
+{% if winning_team.name != Draw: %}
 <p> Winner: {{winning_team.name}}</p>
-<!-- <div><p><a href="/matches/{{match.id}}/edit">Edit</a></p></div> -->
-<!-- <p>Winner: {{winning_team.name}}</p> -->
+{% else: %}
+<p>{{match.team_a.name}} and {{match.team_b.name}} tied.</p>
+{% endif %}
 {% endblock %}
