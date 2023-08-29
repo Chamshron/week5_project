@@ -7,10 +7,10 @@ class Match:
         self.match_date = match_date
         self.id = id
 
-    def winner(self):
-        if self.team_a_score > self.team_b_score:
-            return self.team_a
-        elif self.team_a_score == self.team_b_score:
+    def winner(match):
+        if match.team_a_score > match.team_b_score:
+            return match.team_a
+        elif match.team_a_score == match.team_b_score:
             return "Draw"
         else:
-            return self.team_b
+            return match.team_b

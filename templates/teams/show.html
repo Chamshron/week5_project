@@ -4,6 +4,10 @@
 <h1> Team Name: {{team.name}} </h1>
 
 <p>Country: {{ team.country }}</p>
+<p>Matches: {% for match in matches %}
+    <li>{{match.match_date}}</li>
+    {% endfor %}
+</p>
 <div><p><a href="/teams/{{team.id}}/edit">Edit</a></p></div>
 
 {% endblock %}

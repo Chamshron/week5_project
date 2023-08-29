@@ -2,16 +2,8 @@
 
 {% block content %}
 <h1>Players in the European Kendo League</h1>
-
-<table>
-  <tr>
-    <th>Players in the European Kendo League: </th>
-    <th></th>
-    <th></th>
-  </tr>
   {% for player in players %}
-  <td><a href="/players/{{ player.id }}"> {{player.name}} </a></td>
-  <td></td>
+  <li><a href="/players/{{ player.id }}"> {{player.name}}, {{player.team}} </a></li>
   {% endfor %}
 </table>
 {% endblock %}

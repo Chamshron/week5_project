@@ -14,7 +14,9 @@ def matches():
 @matches_blueprint.route("/matches/<id>")
 def show(id):
     match = match_repository.select_one_match(id)
-    return render_template("matches/show.html", match = match)
+    winning_team = Match.winner(match)
+    teams = team_repository.teams_for_match(match)
+    return render_template("matches/show.html", match = match, teams=teams, winning_team=winning_team)
 
 @matches_blueprint.route("/matches/new", methods = ['GET'])
 def new_match():

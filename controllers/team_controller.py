@@ -16,7 +16,8 @@ def teams():
 @teams_blueprint.route("/teams/<id>")
 def show(id):
     team = team_repository.select_one_team(id)
-    return render_template("teams/show.html", team = team)
+    matches = match_repository.matches_for_team(team)
+    return render_template("teams/show.html", team = team, matches=matches)
 
 
 @teams_blueprint.route("/teams/new", methods=['GET'])

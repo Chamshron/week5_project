@@ -3,7 +3,10 @@
 {% block content %}
 <h1> {{match.match_date}} </h1>
 
-<p>Teams: {{ match.team_a }} & {{ match.team_b }}</p>
+<p>
+    Teams: {{match.team_a}} with {{match.match_a_score}} points and {{match.team_b}} with {{match.match_b_score}} points.
+</p>
+<p> Winner: {{winning_team}}</p>
 <!-- <div><p><a href="/matches/{{match.id}}/edit">Edit</a></p></div> -->
-
+<!-- <p>Winner: {{winning_team.name}}</p> -->
 {% endblock %}
