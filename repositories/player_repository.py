@@ -1,5 +1,6 @@
 from db.run_sql import run_sql
 from models.player import Player
+import repositories.team_repository as team_repositories
 
 def save_player(player):
     sql = "INSERT INTO players(name, grade, team) VALUES (%s, %s, %s) RETURNING id"
@@ -24,7 +25,8 @@ def select_one_player(id):
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        player = Player(result['name'], result['grade'], result['team'], result['id'])
+        team = team_repositories.select_one_team(result['team'])
+        player = Player(result['name'], result['grade'], team, result['id'])
     return player
 
 def delete_all():

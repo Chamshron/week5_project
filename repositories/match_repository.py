@@ -1,6 +1,7 @@
 from db.run_sql import run_sql
 from models.match import Match
 from models.team import Team
+import repositories.team_repository as team_repository
 import pdb
 
 def save_match(match):
@@ -16,7 +17,9 @@ def select_all_matches():
     sql = "SELECT * FROM matches"
     results = run_sql(sql)
     for row in results:
-        match = Match(row['team_a'], row['team_b'], row['team_a_score'], row['team_b_score'], row['match_date'], row['id'])
+        team_a = team_repository.select_one_team(row['team_a'])
+        team_b = team_repository.select_one_team(row['team_b'])
+        match = Match(team_a, team_b, row['team_a_score'], row['team_b_score'], row['match_date'], row['id'])
         matches.append(match)
     return matches
 
@@ -27,7 +30,9 @@ def select_one_match(id):
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        match = Match(result['team_a'], result['team_b'], result['team_a_score'], result['team_b_score'], result['match_date'], result['id'])
+        team_a = team_repository.select_one_team(result['team_a'])
+        team_b = team_repository.select_one_team(result['team_b'])
+        match = Match(team_a, team_b, result['team_a_score'], result['team_b_score'], result['match_date'], result['id'])
     return match
 
 def delete_all():
