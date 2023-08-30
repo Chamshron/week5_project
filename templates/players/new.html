@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Add a Player to European Kendo League</h1>
+
+<form action="/players" method="post">
+<div>
+    <label for="name">Full Name: </label>
+    <input type="text" id="name" name="name" placeholder ="Full Name" required autofocus>
+</div>
+
+<div>
+    <label for="grade">Current Grade: </label>
+    <input type="number" id="grade" name="grade" placeholder ="Grade" required autofocus>
+</div>
+
+<div>
+    <label for="team">Select a Team: </label>
+    <select name="team" id="team">
+        {%for team in teams%}
+        <option value="{{team.id}}">{{team.name}}</option>
+        {% endfor %}
+    </select>
+
+<input class="btn btn--action" type='submit' value="Add Player to the League">
+</form>
+
+{% endblock %}
