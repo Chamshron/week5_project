@@ -12,6 +12,7 @@ Extensions:
 - The app should allow the user to add players to their team and remove them. 
 - The app should allow the user to delete a game. 
 - The app should show if a game ended in a draw.
+- The app should not allow the same team to be selected twice for one match.
 
 Extended Extensions:
 - The app should be able to display all players for a team.
