@@ -6,13 +6,13 @@
 {% for match in matches %}
 <table style="width:100%">
     <tr>
-        <th style="width:30%">Country</th>
         <th style="width:30%">Matches</th>
+        <th style="width:30%">Teams</th>
         <th style="width:30%">Need to Edit?</th>
     </tr>
     <tr>
-        <th>{{ team.country }}</th>
-        <th>{{match.match_date}} <br> {{match.team_a.name}} vs. {{match.team_b.name}}</th>
+        <th>{{match.match_date}} </th>
+        <th> {{match.team_a.name}} vs. {{match.team_b.name}}</th>
         <th><div><p><a href="/teams/{{team.id}}/edit">Edit</a></p></div></th>
     </tr>
 </table>

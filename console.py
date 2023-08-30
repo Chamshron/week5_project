@@ -12,11 +12,11 @@ player_repository.delete_all()
 team_repository.delete_all()
 
 #Team Repository Tests
-team1 = Team("Team GB", "United Kingdom", 0, [])
+team1 = Team("Yorkshire Roses", "United Kingdom", 0, [])
 team_repository.save(team1)
-team2 = Team("Team France", "France",0, [])
+team2 = Team("Parisian Panthers", "France",0, [])
 team_repository.save(team2)
-team3 = Team("Team Poland", "Poland", 0, [])
+team3 = Team("Steam Rolling Poland", "Poland", 0, [])
 team_repository.save(team3)
 
 #Team Repository Tests

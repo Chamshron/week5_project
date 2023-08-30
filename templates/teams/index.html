@@ -3,9 +3,9 @@
 {% block content %}
 <h1>Teams in the European Kendo League</h1>
 
-<p class="btn--wrapper">
-  <a class="btn btn--action" href="/teams/new">New Team</a>
-</p>
+<form action="window.location.href='/teams/new';"><button type="submit">Add Your Team Now</button></form>
+
+<spacer type="horizontal" width="100" height="100"> ♢ </spacer>
 
 {% for team in teams %}
 <table style="width:100%">
@@ -19,8 +19,9 @@
     <th>{{ team.country }}</th>
     <th>  <div class="buttons">
       <form class="delete-form" action="/teams/{{team.id}}/delete" method="POST">
-        <button class="trash-button"><i class="fa fa-trash-o fa-3x" style="color:red" aria-hidden="true"></i></button>
+        <button class="trash-button"><i class="fa-solid fa-dumpster fa-lg" style="color:red" aria-hidden="true"></i></button>
       </form></th>
   {% endfor %}
 </table>
 {% endblock %}
+

@@ -3,6 +3,7 @@ from flask import Blueprint
 import repositories.team_repository as team_repository
 import repositories.match_repository as match_repository
 from models.team import Team
+from models.match import Match
 import pdb
 
 teams_blueprint = Blueprint("teams", __name__)
@@ -18,7 +19,6 @@ def show(id):
     team = team_repository.select_one_team(id)
     matches = match_repository.matches_for_team(team)
     return render_template("teams/show.html", team = team, matches=matches)
-
 
 @teams_blueprint.route("/teams/new", methods=['GET'])
 def new_task():

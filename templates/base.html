@@ -6,22 +6,23 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://kit.fontawesome.com/cdf00a1b59.js" crossorigin="anonymous"></script>
     <title>European Kendo League</title>
   </head>
 <main class="flex flex--row">
     <nav>
       <ul>
         <li>
-          <a href="/">Home</a>
+          <a class ="active" href="/"><i class="fa-solid fa-house-user"></i>Home</a>
         </li>
         <li>
-          <a href="/teams">Teams</a>
+          <a class = "active" href="/teams"><i class="fa-solid fa-people-group"></i>Teams</a>
         </li>
         <li>
-          <a href="/players">Players</a>
+          <a class ="active" href="/players"><i class="fa-solid fa-user"></i>Players</a>
         </li>
         <li>
-          <a href="/matches">Matches</a>
+          <a class="active" href="/matches"><i class="fa-solid fa-stopwatch"></i>Matches</a>
         </li>
       </ul>
     </nav>
@@ -33,8 +34,6 @@
     </main>
   </body>
   <footer>
-    <p>This is an Emma original website!</p>
-    <p>All praise can be sent to Emma Cameron</p>
-    <p>All criticism can be sent to CodeClan Liquidators</p>
+    <p>This is an Emma original website! All praise can be sent to Emma Cameron. All criticism can be sent to CodeClan Liquidators.</p>
   </footer>
   </html>
