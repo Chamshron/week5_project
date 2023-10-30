@@ -1,13 +1,16 @@
-**Reflection and THoughts**
+**Reflection and Thoughts**
+<br>
 Before coming to CodeClan, I had very limited exposure to coding (some sql) however, within 5 weeks I was able to create this basic python CRUD app with some CSS styling. While there are areas I would like to change, such as the tables and CSS styling, I'm proud of what I achieved with those 5 weeks.
 
 
 # week5_project
+<br>
 In week 5 of CodeClan, we were tasked with completining a solo python project; I selected the Sports Scoring application.
 
 This project was built using HTML/CSS, Python, Flask, PostgreSQL and the psycopg. 
 
 **Initial Brief**
+<br>
 _Sports Scoring app
 Build an app that lets a sports fan keep track of their favourite sports league.
 As a huge fan of [your sport], you want to stay up to date with the league. You're interested to see which team leads the table and who won the latest games/matches/fixtures/bouts/…
@@ -22,6 +25,7 @@ Add players to teams and let them have game stats (points won, fouls, etc.)
 Anything else you can think of_
 
 **Updated Brief**
+<br>
 _The initial brief was too vague so I created an updated brief that was more structured.
 
 The European Kendo Federation has reached out to you to create a sport scoring application for their coaches; this app would allow the user to create, edit, and remove teams; allow the user to create new games; allow the user to view all games for a team and all teams in a game; allow the user to see if a game was won or lost.
@@ -39,7 +43,3 @@ Extended Extensions:
 - The app should be able to display all players for a team.
 - The app should show the different categories the individual players are competing in as well.
 - The app should show a ranking of highest number of wins to lowest number of wins. _
-
-**  What I learned**
-
-This project was completed within a few working days and was my first solo project. I learned a lot from this project however, in the future I think I will spend more time on CSS as I relied too much on tables. 
