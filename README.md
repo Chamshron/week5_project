@@ -1,3 +1,7 @@
+**Reflection and THoughts**
+Before coming to CodeClan, I had very limited exposure to coding (some sql) however, within 5 weeks I was able to create this basic python CRUD app with some CSS styling. While there are areas I would like to change, such as the tables and CSS styling, I'm proud of what I achieved with those 5 weeks.
+
+
 # week5_project
 In week 5 of CodeClan, we were tasked with completining a solo python project; I selected the Sports Scoring application.
 
